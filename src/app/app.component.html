@@ -1,0 +1,14 @@
+<hello name="{{ name }}"></hello>
+<p>
+  Testing multi services Injection. <br/>
+  Search user Posts by user ID:
+</p>
+
+<input [hidden]="searching"  #userIDInput type="number" placeholder="search user by ID" min="0" max="10"/> <button (click)="search(userIDInput?.value)">search</button>
+
+<img *ngIf="searching" src="https://miro.medium.com/max/882/1*9EBHIOzhE1XfMYoKz1JcsQ.gif">
+
+<div *ngIf="selectedUser && !searching">
+  <p><b>Result:</b></p>
+  <pre>{{ selectedUser|json }}</pre>
+</div>
